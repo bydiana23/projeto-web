@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #fdbc6c;
+  height: 100%;
+}
+/*--- HEADER ---*/
+.icons {
+  display: inline-block;
+  margin-left: 3px;
+  padding: 5px 2px;
+}
+
+.direitos {
+  float: right;
+  margin-right: 15px;
+  padding-top: 7px;
+  font-family: "Roboto", "Courier New";
+  font-size: 13px;
+  color: white;
+}
+
+.icon-bar {
+  background: #c88bee;
+}
+
+.face {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 1080px;
+  object-fit: contain;
+}
+
+/*--- ABOUT US ---*/
+
+.card {
+  border: 0;
+  min-height: 60vh;
+  background: linear-gradient(
+    360deg,
+    rgba(229, 143, 118, 1) 0%,
+    rgba(236, 170, 151, 1) 35%,
+    rgb(246, 223, 223) 100%
+  );
+  transition: 1s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* Faz a secção “sangrar” a toda a largura do viewport, mesmo dentro de .container */
+.fullbleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* O carrossel e o conteúdo ocupam toda a largura */
+.fullbleed .carousel,
+.fullbleed .carousel-inner {
+  width: 100vw;
+}
+
+/* As imagens cobrem e podem cortar para não deixar barras laterais */
+.fullbleed .carousel-item img {
+  width: 100vw; /* ocupa toda a largura do ecrã */
+  height: 70vh; /* ajusta: 60–90vh consoante preferires */
+  object-fit: cover; /* corta para preencher */
+  object-position: center;
+  display: block;
+}
+
+/*--- SKILLS---*/
+.progress-bar {
+  background-color: #e58f76;
+}
+
+/*--- FOODS ---*/
+
+/* .custom-card-img {
+    margin: 10px;
+} */
+
+/*--- CONTACT US ---*/
+
+/*--- NAVBAR ---*/
+
+.main {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.main ul {
+  margin: auto;
+  padding: 20px 0 0;
+  list-style: none;
+  text-align: right;
+}
+
+.main ul li {
+  float: none;
+  display: inline-block;
+}
+
+.main li a:nth-child(1) {
+  float: left;
+}
+.main ul li:nth-child(2) {
+  float: left;
+}
+.main ul li:nth-child(3) {
+  float: left;
+}
+.main li a {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Titillium Web", sans-serif;
+  padding: 5px 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  display: block;
+  background: #2a9134;
+  transition: all 0.5s ease;
+}
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: rotate(45deg) translate(-5px, -8px);
+}
+
+.item-1,
+.item-2,
+.item-3 {
+  min-height: 60vh;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
+}
+
+.botao {
+  color: #e58f76;
+}
+
+/*--- PROJECTS ---*/
+
+#projects .projects {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1000px 0;
+}
+
+#projects .projects-header h1 {
+  margin-bottom: 50px;
+}
+
+#projects .all-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#projects .projects-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* ===== Secção Skills ===== */
+
+.skill-card {
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.skill-media {
+  position: relative;
+  width: 140px;
+  min-width: 140px;
+  height: 120px;
+  background: #666; /* “cinza” do bloco base (podes trocar por imagem) */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+/* Corte diagonal a preto como na imagem enviada */
+.skill-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #111;
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 35% 100%);
+}
+
+.skill-media i {
+  font-size: 3rem;
+  color: #1f0808;
+  z-index: 1;
+}
+
+.skill-body h3 {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.skill-body p {
+  margin: 0;
+  color: #000000;
+}
+
+/* Responsivo */
+@media (max-width: 575.98px) {
+  .skill-card {
+    flex-direction: row;
+  }
+  .skill-media {
+    width: 110px;
+    min-width: 110px;
+    height: 100px;
+  }
+}
+
+.skill-image {
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+}
