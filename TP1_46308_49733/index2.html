@@ -5,7 +5,6 @@
     <title>TravelJournal</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google fonts CSS -->
@@ -20,8 +19,8 @@
 
 <body>
     <!------------------------------HEADER------------------------------->
-    <header>
-        <div class="icon-bar ">
+    <header class="header">
+        <div class="icon-bar">
             <div class="icons">
                 <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
             </div>
@@ -41,10 +40,11 @@
             <div class="direitos">ALL RIGHTS RESERVED</div>
         </div>
     </header>
+
+
     <!------------------------------NAVBAR------------------------------->
-    
     <nav class="navbar py-1 navbar-expand-lg bg-white">
-        <!------ICON------>
+        <!------LOGO------>
         <div class="logo">
             <i class="fa fa-plane"></i>
         </div>
@@ -58,34 +58,46 @@
             <div class="navbar-toggler-icon bar3"></div>
         </button>
 
-        <div class="main collapse navbar-collapse" id="navbarLinks">
+        <div class="main collapse navbar-collapse" id="navbarLinks" >
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="#home">Home</a>
                 </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="#travel">Travel Journal</a>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Travel Journal
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#travel">Egipto</a>
+                        <a class="dropdown-item" href="#travel">Nova Iorque</a>
+                        <a class="dropdown-item" href="#travel">Itália</a>
+                        <a class="dropdown-item" href="#travel">Punta Cana</a>
+                    </div>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#section4">Os Descobrimentos</a>
+                    <a class="nav-link" href="#travelprogress">Travel Progress</a>
                 </li>
 
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Food
+                        Foods
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#food">Feijoada Brasileira</a>
-                        <a class="dropdown-item" href="#food">Paella Espanhola</a>
-                        <a class="dropdown-item" href="#food">Croissant</a>
+                        <a class="dropdown-item" href="#foods">Feijoada Brasileira</a>
+                        <a class="dropdown-item" href="#foods">Paella Espanhola</a>
+                        <a class="dropdown-item" href="#foods">Croissant</a>
+                        <a class="dropdown-item" href="#foods">Pizza Americana</a>
+                        <a class="dropdown-item" href="#foods">Tajine Marroquina</a>
+                        <a class="dropdown-item" href="#foods">Kofta</a>
                     </div>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#contact">Contact Me</a>
+                    <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -104,13 +116,34 @@
             <!-- images -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/carrossel1.jpg" class="d-block w-100" alt="img1">
+                    <img src="img/caroussel1.jpg" class="d-block w-100" alt="img1">
+                    <div class="hero-caption">
+                        <!-- Texto para ecrãs ≥992px -->
+                        <h1 class="d-none d-lg-block">I am Discovering the World</h1>
+                        <!-- Texto para ecrãs <992px -->
+                        <h1 class="d-lg-none">I Am an Explorer</h1>
+                        <a href="#travel" class="btn btn-hero mt-3">My Journal</a>
+                    </div>
                 </div>
                     <div class="carousel-item">
-                        <img src="img/croissant.jpg" class="d-block w-100" alt="img2">
+                        <img src="img/caroussel2.jpg" class="d-block w-100" alt="img2">
+                        <div class="hero-caption">
+                        <!-- Texto para ecrãs ≥992px -->
+                        <h1 class="d-none d-lg-block">أكتشف العالم</h1>
+                        <!-- Texto para ecrãs <992px -->
+                        <h1 class="d-lg-none">أنا مستكشف</h1>
+                        <a href="#travel" class="btn btn-hero mt-3">My Journal</a>
+                    </div>
                     </div>
                 <div class="carousel-item">
-                    <img src="img/feijoada.jpg" class="d-block w-100" alt="img3">
+                    <img src="img/caroussel3.jpg" class="d-block w-100" alt="img3">
+                    <div class="hero-caption">
+                        <!-- Texto para ecrãs ≥992px -->
+                        <h1 class="d-none d-lg-block">Je découvre le monde</h1>
+                        <!-- Texto para ecrãs <992px -->
+                        <h1 class="d-lg-none">Je suis un explorateur</h1>
+                        <a href="#travel" class="btn btn-hero mt-3">My Journal</a>
+                    </div>
                 </div>
             </div>
 
@@ -285,12 +318,10 @@
                         <p class="card-text">See my detailed resume to understand my boundaries</p>
                     </div>
                 </div>
-                <div class="text-center">
-                    <button type="button" class="botao btn-outline-light btn-lg bg-light" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalLong">
-                        DOWNLOAD RESUME
-                    </button>
-                </div>
+
+                <form class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
+                    <button type="submit" class="btn btn-outline-light btn-lg">Download Resume</button>
+                </form>
             </div>
 
         </div>
@@ -298,7 +329,7 @@
     </section>
 
     <!------------------------------FOODS------------------------------->
-    <section class="foods" id="container3">
+    <section id="foods" class="container3">
         <div class="container-fluid">
             <div class="row height">
                 <div class="col text-center">
@@ -317,13 +348,12 @@
         </div>
         
         <div class="container">
+            <!-- Card 1 -->
             <div class="row g-4">
-
-                <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="card project-card h-100">
                         <div class="card-img-wrap">
-                            <img src="img/feijoada.jpg" class="card-img-top" alt="Feijoada Brasileira">
+                            <img src="img/feijoadabr.jpg" class="card-img-top" alt="Feijoada Brasileira">
                             <div class="card-overlay">
                             <i class="fas fa-search overlay-icon"></i>
                         </div>
@@ -331,19 +361,20 @@
                     <div class="card-body">
                         <h5 class="card-title mb-2">Feijoada Brasileira</h5>
                         <p class="card-text mb-0">
-                        Prato icónico do Brasil, rico e reconfortante — um clássico que celebra tradição e sabores intensos.
+                        Prato icónico do Brasil, rico e reconfortante. Um clássico que celebra tradição e sabores intensos.
                         </p>
                     </div>
                 </div>
             </div>
 
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card project-card h-100">
+            
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card project-card h-100">
                     <div class="card-img-wrap">
-                        <img src="img/paella.jpg" class="card-img-top" alt="Paella Espanhola">
+                        <img src="img/paellaspain.jpg" class="card-img-top" alt="Paella Espanhola">
                         <div class="card-overlay">
-                        <i class="fas fa-search overlay-icon"></i>
+                            <i class="fas fa-search overlay-icon"></i>
                         </div>
                     </div>
                     <div class="card-body">
@@ -352,26 +383,79 @@
                         Cores vibrantes e aromas marcantes. Um símbolo de partilha vindo de Valência.
                         </p>
                     </div>
-                    </div>
                 </div>
+            </div>
 
             <!-- Card 3 -->
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="card project-card h-100">
-                <div class="card-img-wrap">
-                    <img src="img/croissant.jpg" class="card-img-top" alt="Croissant">
-                    <div class="card-overlay">
-                    <i class="fas fa-search overlay-icon"></i>
+                    <div class="card-img-wrap">
+                        <img src="img/croissantparis.jpg" class="card-img-top" alt="Croissant">
+                        <div class="card-overlay">
+                            <i class="fas fa-search overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">Croissant</h5>
+                        <p class="card-text mb-0">
+                        Massa leve e amanteigada, a jóia da pâtisserie francesa, perfeita a qualquer hora.
+                        </p>
+                    </div>
+                </div>   
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card project-card h-100">
+                    <div class="card-img-wrap">
+                        <img src="img/pizza.jpg" class="card-img-top" alt="Pizza Americana">
+                        <div class="card-overlay">
+                            <i class="fas fa-search overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">Pizza Americana</h5>
+                        <p class="card-text mb-0">
+                        Simples, saborosa e icónica. A pizza americana é um clássico que conquista paladares.
+                        </p>
                     </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title mb-2">Croissant</h5>
-                    <p class="card-text mb-0">
-                    Massa leve e amanteigada — a joia da pâtisserie francesa, perfeita a qualquer hora.
-                    </p>
-                </div>
-                </div>
             </div>
+
+            <!-- Card 5 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card project-card h-100">
+                    <div class="card-img-wrap">
+                        <img src="img/marrocostajine.jpg" class="card-img-top" alt="Tajine Marroquina">
+                        <div class="card-overlay">
+                            <i class="fas fa-search overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">Tajine Marroquina</h5>
+                        <p class="card-text mb-0">
+                        Prato muito típico do Marrocos, cozinhado lentamente em um recipiente de barro, que realça os sabores.
+                        </p>
+                    </div>
+                </div>   
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card project-card h-100">
+                    <div class="card-img-wrap">
+                        <img src="img/comidaegito.jpg" class="card-img-top" alt="Kofta">
+                        <div class="card-overlay">
+                            <i class="fas fa-search overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">Kofta</h5>
+                        <p class="card-text mb-0">
+                        Carne moída temperada, moldada em forma de cilindro e grelhada, servida com especiarias. Um Most Eat do Egipto.
+                        </p>
+                    </div>
+                </div>   
             </div>
         </div>
     </section>
@@ -381,7 +465,7 @@
         <div class="container-fluid">
             <div class="row height">
                 <div class="col text-center">
-                    <h1 class="mb-0">Contact us</h1>
+                    <h1 class="mb-0">Contact Us</h1>
                 </div>
             </div>
 
@@ -395,9 +479,9 @@
             </div>
 
             <form class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
-            <input type="email" class="form-control email-input" id="formcontrol"
-                placeholder="name@example.com">
-            <button type="submit" class="btn btn-outline-light btn-lg">Submit Here</button>
+                <input type="email" class="form-control email-input" id="formcontrol"
+                    placeholder="name@example.com">
+                <button type="submit" class="btn btn-outline-light btn-lg">Submit Here</button>
             </form>
 
         </div>
